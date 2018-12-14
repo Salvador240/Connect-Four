@@ -1,14 +1,74 @@
 h1 {
     text-align: center;
 }
+/* body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
 
 #container{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 10px;
-    max-width: 600px;    
+    display: flex;
+    background-size: contain;
+    justify-content: center;
+    align-items: center;
+}
+
+#msg {
+    display: flex;
+    justify-content: center;
+    margin: auto;
 }
 
 .column {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: aquamarine;
+    width: 100px;
+    height: 450px;
+    border: 1px solid black;
+    flex-direction: column-reverse;
+}
+
+.blackDisk {
+    width: 95px;
+    height: 45px;
+    background-color: black;
+    border-radius: 5px;
     
+}
+.redDisk {
+    width: 95px;
+    height: 45px;
+    background-color: red;
+    border-radius: 5px;
+   
+}
+
+.bar {
+    color: blue;
+    width: 200px;
+    height: 50px;
+    text-align: center;
+    background-color: rgba(48, 148, 101, 0.317);
+}
+
+.disableDiv{
+    pointer-events: none;
+    opacity: 0.4;
+}
+
+#reloadButton {
+    background-color: darkgreen;
+     width: 56px;
+    height: 34px; 
+    margin: auto;
+}
+
+button{
+    background: #ffe8d4;
+    border: 1px solid #f69d3c;
+    padding: 5px;
+    border-radius: 5px;
 }
