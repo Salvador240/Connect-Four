@@ -1,74 +1,154 @@
+/* General styles for the body */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #1a1a1a; /* Darker background color */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    padding: 10px;
+    color: #fff; /* Light text color */
+}
+
+/* Styles for the heading */
 h1 {
     text-align: center;
+    color: #00bcd4; /* Same color as the inside of the columns */
+    margin-bottom: 20px;
 }
-/* body{
+
+/* Styles for the game board container */
+#container {
     display: flex;
     justify-content: center;
     align-items: center;
-} */
-
-#container{
-    display: flex;
-    background-size: contain;
-    justify-content: center;
-    align-items: center;
+    background-color: #333; /* Darker background for the game board */
+    padding: 10px;
+    border: 2px solid #444; /* Darker border */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
+/* Styles for the win message */
 #msg {
     display: flex;
     justify-content: center;
-    margin: auto;
+    margin: 20px auto;
+    font-size: 1.5rem;
+    color: #fff; /* Light text color */
 }
 
+/* Styles for the columns */
 .column {
     display: flex;
-    flex-direction: row;
+    flex-direction: column-reverse;
     align-items: center;
-    background-color: aquamarine;
+    background-color: #00bcd4;
     width: 100px;
     height: 450px;
-    border: 1px solid black;
-    flex-direction: column-reverse;
+    border: 1px solid #333;
+    margin: 0 5px;
+    transition: transform 0.3s ease; /* Animation for columns */
 }
 
+.column:hover {
+    transform: scale(1.05); /* Scale up on hover */
+}
+
+/* Styles for the black disk */
 .blackDisk {
     width: 95px;
     height: 45px;
     background-color: black;
     border-radius: 5px;
-    
+    animation: drop 0.5s ease; /* Drop animation */
 }
+
+/* Styles for the red disk */
 .redDisk {
     width: 95px;
     height: 45px;
     background-color: red;
     border-radius: 5px;
-   
+    animation: drop 0.5s ease; /* Drop animation */
 }
 
+/* Drop animation keyframes */
+@keyframes drop {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Styles for the win message bar */
 .bar {
-    color: blue;
+    color: #fff; /* Light text color */
     width: 200px;
     height: 50px;
     text-align: center;
-    background-color: rgba(48, 148, 101, 0.317);
+    background-color: rgba(0, 0, 0, 0.8); /* Dark overlay */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
 }
 
-.disableDiv{
+/* Styles to disable the game board */
+.disableDiv {
     pointer-events: none;
     opacity: 0.4;
 }
 
+/* Styles for the reload button */
 #reloadButton {
     background-color: darkgreen;
-     width: 56px;
-    height: 34px; 
-    margin: auto;
+    color: white;
+    width: 100px;
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-button{
+#reloadButton:hover {
+    background-color: green;
+}
+
+/* General button styles */
+button {
     background: #ffe8d4;
     border: 1px solid #f69d3c;
-    padding: 5px;
+    padding: 10px;
     border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #f69d3c;
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 600px) {
+    .column {
+        width: 70px;
+        height: 300px;
+    }
+
+    .blackDisk, .redDisk {
+        width: 65px;
+        height: 35px;
+    }
+
+    #reloadButton {
+        width: 80px;
+        height: 35px;
+    }
 }
